@@ -243,7 +243,9 @@ resource "time_sleep" "domain_join_reboot" {
 }
 
 
-```## Identified assumption
+```
+
+## Identified assumption
 AzureRM tf provider doesn't remove the hosts from the hostpool when the host vms are destroyed (and makes sense since they're not tf resource linked directly). 
 
 ## What's happening:
