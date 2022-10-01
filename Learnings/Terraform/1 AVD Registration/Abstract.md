@@ -58,10 +58,6 @@ resource "azurerm_virtual_desktop_host_pool" "pooledbreadthfirst" {
   maximum_sessions_allowed = 16
   load_balancer_type       = "BreadthFirst"
 
-  # registration_info {
-  #   expiration_date = time_rotating.avd_token.rotation_rfc3339
-  # }
-
   lifecycle {
     ignore_changes = [
       load_balancer_type
