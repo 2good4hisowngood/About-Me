@@ -4,7 +4,7 @@
 
 This is to document an issue I encountered and resolved while using the AzureRM terraform provider implementation for Azure Virtual Desktop. 
 
-Everything works as intended. When deploying our AVD solution, Azure Virtual Machine creation is followed by vm extensions, the final extension (once the virtual machine is fully deployed) applies a DSC configuration which registers the vm to the host pool durably. However, this registration process fails somewhere deeper. It appears that when a vm registers to the hostpool with the same metadata, the registration does not update the hostpool in the portal. Those VMs remain in an unavailable state as from when they were destroyed. Because the registration happens on the DSC apply inside the server, destroying the server does not remove the server's registration from the hostpool and prevents the replacement server from registering. 
+I should start by clarifying that everything works as intended by the tf provider. When deploying our AVD solution, Azure Virtual Machine creation is followed by vm extensions, the final extension (once the virtual machine is fully deployed) applies a DSC configuration which registers the vm to the host pool durably. However, this registration process fails somewhere deeper. It appears that when a vm registers to the hostpool with the same metadata, the registration does not update the hostpool in the portal. Those VMs remain in an unavailable state as from when they were destroyed. Because the registration happens on the DSC apply inside the server, destroying the server does not remove the server's registration from the hostpool and prevents the replacement server from registering. 
 
 
 
