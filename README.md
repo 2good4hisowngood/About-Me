@@ -1,2 +1,2 @@
 # About-Me
-About me, and my learnings
+Certificates directory stores course completion certificates. 
